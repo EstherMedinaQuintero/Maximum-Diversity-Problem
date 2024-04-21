@@ -1,4 +1,4 @@
-#include "greedy.h"
+#include "../include/greedy.h"
 
 /**
  * @brief Resuelve el problema greedy

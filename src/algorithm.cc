@@ -1,4 +1,4 @@
-#include "algorithm.h"
+#include "../include/algorithm.h"
 
 /**
  * @brief Constructor de un algoritmo
@@ -15,7 +15,7 @@ Algorithm::Algorithm(std::vector<Point> points, int number_of_points) {
  * @param[in] points Vector de puntos
  * @return Centro de gravedad
  */
-Algorithm::Point GetGravityCenterPoint(std::vector<Point> points) {
+Point Algorithm::GetGravityCenterPoint(std::vector<Point> points) {
   int dimension = points[0].GetDimension();
   std::vector<double> gravity_center_point_coordinates(dimension, 0.0);
   for (auto point : points) {

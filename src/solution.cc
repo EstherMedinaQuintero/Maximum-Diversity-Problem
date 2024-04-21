@@ -1,4 +1,4 @@
-#include "solution.h"
+#include "../include/solution.h"
 
 /**
  * @brief Calcula la función objetivo

@@ -1,4 +1,4 @@
-#include "problem.h"
+#include "../include/problem.h"
 
 /**
  * @brief Constructor de un problema
