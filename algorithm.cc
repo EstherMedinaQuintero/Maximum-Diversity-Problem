@@ -11,10 +11,10 @@ Algorithm::Algorithm(std::vector<Point> points, int number_of_points) {
 }
 
 /**
-  * @brief Getter del centro de gravedad de un vector de puntos
-  * @param[in] points Vector de puntos
-  * @return Centro de gravedad
-  */
+ * @brief Getter del centro de gravedad de un vector de puntos
+ * @param[in] points Vector de puntos
+ * @return Centro de gravedad
+ */
 Algorithm::Point GetGravityCenterPoint(std::vector<Point> points) {
   int dimension = points[0].GetDimension();
   std::vector<double> gravity_center_point_coordinates(dimension, 0.0);
