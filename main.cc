@@ -10,7 +10,7 @@ void execute(std::string algorithm, std::string input_file) {
   srand(time(NULL));
   std::cout << "Processing input file: " << input_file << std::endl;
   /// Probamos con varios m
-  for (int m = 2; m <= 5; m++) {
+  for (int m = 3; m <= 3; m++) {
     std::cout << "Processing m = " << m << std::endl;
     printSolution(algorithm, input_file, m);
   }
