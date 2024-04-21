@@ -11,6 +11,7 @@
 class Problem {
  private:
   std::vector<Point> points_;
+  int number_of_points_;
 
  public:
   /// Constructor y destructor

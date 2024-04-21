@@ -1,4 +1,4 @@
-#include "../include/point.h"
+#include "point.h"
 
 #include <cmath>
 #include <iostream>
@@ -34,7 +34,7 @@ double Point::Distance(const Point& other) const {
  */
 double Point::Distance(const std::vector<Point>& centroids) const {
   double min_distance = Distance(centroids[0]);
-  for (int i = 1; i < centroids.size(); i++) {
+  for (int i = 1; i < (int)centroids.size(); i++) {
     double distance = Distance(centroids[i]);
     if (distance < min_distance) {
       min_distance = distance;
@@ -49,7 +49,7 @@ double Point::Distance(const std::vector<Point>& centroids) const {
  */
 std::string Point::ToString() const {
   std::string result;
-  for (int i = 0; i < coordinates_.size(); i++) {
+  for (int i = 0; i < (int)coordinates_.size(); i++) {
     result += std::to_string(coordinates_[i]) + " ";
   }
   result.pop_back();

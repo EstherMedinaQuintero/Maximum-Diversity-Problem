@@ -1,4 +1,4 @@
-#include "../include/solution.h"
+#include "solution.h"
 
 /**
  * @brief Calcula la función objetivo
@@ -6,8 +6,8 @@
  */
 double Solution::Value() {
   double value = 0;
-  for (int i = 0; i < solution_points_.size(); i++) {
-    for (int j = i + 1; j < solution_points_.size(); j++) {
+  for (int i = 0; i < (int)solution_points_.size(); i++) {
+    for (int j = i + 1; j < (int)solution_points_.size(); j++) {
       value += solution_points_[i].Distance(solution_points_[j]);
     }
   }
@@ -20,9 +20,9 @@ double Solution::Value() {
  */
 std::string Solution::ToString() {
   std::string solution_string = "";
-  for (int i = 0; i < solution_points_.size(); i++) {
+  for (int i = 0; i < (int)solution_points_.size(); i++) {
     solution_string += std::to_string(solution_points_[i].GetId());
-    if (i != solution_points_.size() - 1) {
+    if (i != (int)solution_points_.size() - 1) {
       solution_string += " ";
     }
   }

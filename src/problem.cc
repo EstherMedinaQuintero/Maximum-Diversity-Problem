@@ -1,4 +1,4 @@
-#include "../include/problem.h"
+#include "problem.h"
 
 /**
  * @brief Constructor de un problema
@@ -9,6 +9,7 @@ Problem::Problem(std::string name) {
   std::string line;
   std::getline(file, line);
   int number_of_points = std::stoi(line);
+  number_of_points_ = number_of_points;
   std::getline(file, line);
   int dimension = std::stoi(line);
   int id = 0;

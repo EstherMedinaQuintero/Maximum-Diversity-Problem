@@ -1,4 +1,4 @@
-#include "../include/algorithm.h"
+#include "algorithm.h"
 
 /**
  * @brief Constructor de un algoritmo

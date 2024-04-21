@@ -2,20 +2,13 @@
 #include <chrono>
 #include <fstream>
 #include "greedy.h"
+#include "local-search.h"
 
 void printSolution(std::string algorithm, std::string input_file, int m);
 
-void execute() {
+void execute(std::string algorithm, std::string input_file) {
   srand(time(NULL));
-  std::string algorithm; 
-  std::cout << "Algorithm: ";
-  std::cin >> algorithm;
-  
-  std::string input_file;
-  std::cout << "Input file: ";
-  std::cin >> input_file;
   std::cout << "Processing input file: " << input_file << std::endl;
-  
   /// Probamos con varios m
   for (int m = 2; m <= 5; m++) {
     std::cout << "Processing m = " << m << std::endl;
@@ -36,7 +29,7 @@ void printSolution(std::string algorithm, std::string input_file, int m) {
     auto start = std::chrono::high_resolution_clock::now();
     greedyMDP.Solve();
     auto end = std::chrono::high_resolution_clock::now();
-    auto elapsed_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(end - start)
+    auto elapsed_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(end - start);
 
     /// Resultados en archivo CSV
     line += input_file + "," + std::to_string(points.size()) + "," + std::to_string(points[0].GetDimension())
@@ -47,6 +40,24 @@ void printSolution(std::string algorithm, std::string input_file, int m) {
     std::cout << "Value: " << greedyMDP.GetSolution().Value() << std::endl;
     std::cout << "Vector: " << greedyMDP.GetSolution().ToString() << std::endl;
     std::cout << "Time: " << elapsed_seconds.count() << " seconds" << std::endl;
+
+  } else if (algorithm == "local-search") {
+    LocalSearch localSearch(points, m);
+    auto start = std::chrono::high_resolution_clock::now();
+    localSearch.Solve();
+    auto end = std::chrono::high_resolution_clock::now();
+    auto elapsed_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(end - start);
+
+    /// Resultados en archivo CSV
+    line += input_file + "," + std::to_string(points.size()) + "," + std::to_string(points[0].GetDimension())
+    + "," + std::to_string(m) + "," + std::to_string(localSearch.GetSolution().Value()) + "," + localSearch.GetSolution().ToString()
+    + "," + std::to_string(elapsed_seconds.count());
+    
+    /// Resulados en consola
+    std::cout << "Value: " << localSearch.GetSolution().Value() << std::endl;
+    std::cout << "Vector: " << localSearch.GetSolution().ToString() << std::endl;
+    std::cout << "Time: " << elapsed_seconds.count() << " seconds" << std::endl;
+    
   } else if (algorithm == "grasp") {
     std::cout << "GRASP no está implementado aún" << std::endl;
   } else if (algorithm == "poda") {
@@ -58,6 +69,8 @@ void printSolution(std::string algorithm, std::string input_file, int m) {
 }
 
 int main() {
-  execute(); 
+  std::string algorithm = "local-search";
+  std::string input_file = "./inputs/max_div_15_3.txt";
+  execute(algorithm, input_file);
   return 0;
 }
