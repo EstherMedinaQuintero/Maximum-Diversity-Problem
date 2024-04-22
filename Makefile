@@ -17,6 +17,7 @@ SRCS = ./src/algorithm.cc \
        ./src/point.cc \
        ./src/problem.cc \
        ./src/solution.cc \
+       ./src/utilities.cc \
        ./main.cc
 
 # Generate the object file names by replacing .cc with .o

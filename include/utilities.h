@@ -21,6 +21,7 @@
 #define YELLOW "\033[33m"
 #define NC "\033[0m"
 #define RED "\033[31m"
+#define PINK "\033[95m"
 
 void usage(const std::string& program_name);
 

@@ -3,15 +3,16 @@
 #include <fstream>
 #include "greedy.h"
 #include "local-search.h"
+#include "utilities.h"
 
 void print_solution(std::string algorithm, std::string input_file, int m);
 
 void execute(std::string algorithm, std::string input_file) {
   srand(time(NULL));
-  std::cout << "Processing input file: " << input_file << std::endl;
+  std::cout << PINK "Processing input file: " NC << input_file << std::endl;
   /// Probamos con varios m
-  for (int m = 3; m <= 3; m++) {
-    std::cout << "Processing m = " << m << std::endl;
+  for (int m = 3; m <= 6; m++) {
+    std::cout << BLUE "\n\t--> Processing " NC << "m = " << m << std::endl;
     print_solution(algorithm, input_file, m);
   }
 }
@@ -37,9 +38,9 @@ void print_solution(std::string algorithm, std::string input_file, int m) {
     + "," + std::to_string(elapsed_seconds.count());
     
     /// Resulados en consola
-    std::cout << "Value: " << greedyMDP.get_solution().get_value() << std::endl;
-    std::cout << "Vector: " << greedyMDP.get_solution().to_string() << std::endl;
-    std::cout << "Time: " << elapsed_seconds.count() << " seconds" << std::endl;
+    std::cout << BLUE "\t\t- Value: " NC << greedyMDP.get_solution().get_value() << std::endl;
+    std::cout << BLUE "\t\t- Vector: " NC << greedyMDP.get_solution().to_string() << std::endl;
+    std::cout << BLUE "\t\t- Time: " NC << elapsed_seconds.count() << " seconds" << std::endl;
 
   } else if (algorithm == "local-search") {
     LocalSearch localSearch(points, m);
@@ -54,9 +55,9 @@ void print_solution(std::string algorithm, std::string input_file, int m) {
     + "," + std::to_string(elapsed_seconds.count());
     
     /// Resulados en consola
-    std::cout << "Value: " << localSearch.get_solution().get_value() << std::endl;
-    std::cout << "Vector: " << localSearch.get_solution().to_string() << std::endl;
-    std::cout << "Time: " << elapsed_seconds.count() << " seconds" << std::endl;
+    std::cout << BLUE "\t\t- Value: " NC << localSearch.get_solution().get_value() << std::endl;
+    std::cout << BLUE "\t\t- Vector: " NC << localSearch.get_solution().to_string() << std::endl;
+    std::cout << BLUE "\t\t- Time: " NC << elapsed_seconds.count() << " seconds" << std::endl;
     
   } else if (algorithm == "grasp") {
     std::cout << "GRASP no está implementado aún" << std::endl;
