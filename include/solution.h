@@ -20,6 +20,10 @@ class Solution {
   /// Métodos
   double Value();
   std::string ToString();
+
+  /// Sobrecarga de los [] para acceder a los puntos
+  Point& operator[](int i) { return solution_points_[i]; }
+  
 };
 
 #endif

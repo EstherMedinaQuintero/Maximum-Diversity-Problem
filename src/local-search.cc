@@ -1,64 +1,9 @@
-#include <algorithm>
-#include <vector>
-#include <numeric>
-
 #include "local-search.h"
 
 /**
- * @brief Resuelve el problema con búsqueda local
+ * @brief Resuelve el problema greedy
  */
-Solution LocalSearch::Search(std::vector<Point>& points) {
-  int iterations = 0;
-  Solution best_solution = solution_;
-  do {
-    solution_ = best_solution;
-    double current_value = solution_.Value();
-    std::vector<std::pair<Solution, double>> neighbors = GetNeighborhood(points);
-    for (auto neighbor : neighbors) {
-      double neighbor_value = neighbor.second;
-      if (neighbor_value > current_value) {
-        best_solution = neighbor.first;
-      }
-    }
-    ++iterations;
-  } while (Solution(best_solution).Value() > solution_.Value() && iterations < iterations_);
-  return best_solution;
-}
-
-std::vector<std::pair<Solution, double>> LocalSearch::GetNeighborhood(std::vector<Point>& points) {
-  std::vector<std::pair<Solution, double>> neighborhood;
-  double current_value = solution_.Value();
-  for (int i = 0; i < solution_.GetPoints().size(); ++i) {
-    for (int j = 0; j < points.size(); ++j) {
-      // comprobar que point[j] no esta en solution_
-      bool found = false;
-      for (int k = 0; k < solution_.GetPoints().size(); ++k) {
-        if (solution_.GetPoints()[k].GetId() == points[j].GetId()) {
-          found = true;
-          break;
-        }
-      }
-      if (!found) {
-        std::vector<Point> new_solution = solution_.GetPoints();
-        new_solution[i] = points[j];
-        double new_value = current_value;
-        for (int k = 0; k < new_solution.size(); ++k) {
-          if (k != i) {
-            new_value += new_solution[i].Distance(new_solution[k]);
-            new_value -= solution_.GetPoints()[i].Distance(solution_.GetPoints()[k]);
-          }
-        }
-        neighborhood.push_back(std::pair<Solution, double>(Solution(new_solution), new_value));
-      }   
-    }
-  }
-  return neighborhood;
-}
-
-/**
- * @brief Obtiene la primera solución
- */
-void LocalSearch::GetFirstSolution() {
+void LocalSearch::Solve() {
   std::vector<Point> solution_points;
   solution_points.reserve(number_of_points_);
 
@@ -84,14 +29,27 @@ void LocalSearch::GetFirstSolution() {
   }
 
   solution_points_ = Solution(solution_points);
-}
+  std::cout << "Solución inicial: ";
+  std::cout << solution_points_.ToString() << std::endl;
+  std::cout << "Valor de la solución inicial: ";
+  std::cout << solution_points_.Value() << std::endl;
+  std::cout << "Puntos sin usar: ";
+  for (int i = 0; i < (int)points_.size(); i++) {
+    std::cout << points_[i].GetId() << " ";
+  }
+  std::cout << std::endl;
 
-/**
- * @brief Resuelve el problema con búsqueda local
- */
-void LocalSearch::Solve() {
-  GetFirstSolution();
-  std::vector<Point> points = points_;
-  Solution solution = Search(points);
-  ChangeSolution(solution);
+  // Mejora con local search (intercambios)
+  // Buscamos maximizar la suma de las distancias
+  double best_value = solution_points_.Value();
+
+  // Recorremos los puntos de la solución
+  for (int i = 0; i < number_of_points_; i++) {
+    std::cout << "--> Cambiando el punto " << solution_points_[i].GetId() << " de la solución\n";
+    // Recorremos los puntos generales
+    for (int j = 0; j < (int)points_.size(); j++) {
+      std::cout << "\t - Probando con el punto " << points_[j].GetId() << "\n";
+    }
+  }
+
 }
