@@ -29,16 +29,6 @@ void LocalSearch::solve() {
   }
 
   solution_points_ = Solution(solution_points);
-  std::cout << "Solución inicial: ";
-  std::cout << solution_points_.to_string() << std::endl;
-  std::cout << "Valor de la solución inicial: ";
-  std::cout << solution_points_.get_value() << std::endl;
-  std::cout << "Puntos sin usar: ";
-  for (int i = 0; i < (int)points_.size(); i++) {
-    std::cout << points_[i].get_id() << " ";
-  }
-  std::cout << std::endl;
-
   // Mejora con local search (intercambios)
   // Buscamos maximizar la suma de las distancias
   double actual_value = solution_points_.get_value();
@@ -46,29 +36,23 @@ void LocalSearch::solve() {
 
   // Recorremos los puntos de la solución
   for (int i = 0; i < number_of_points_; i++) {
-    std::cout << "--> Cambiando el punto " << solution_points_.get_point(i).get_id() << " de la solución\n";
     // Recorremos los puntos generales
     for (int j = 0; j < (int)points_.size(); j++) {
-      std::cout << "\t - Probando con el punto " << points_[j].get_id() << "\n";
       // Hacemos swap
       Point temp = solution_points_.get_point(i);
       solution_points_.set_point(points_[j], i);
       points_.erase(points_.begin() + j);
       points_.push_back(temp);
       // Comprobamos que el swap se ha hecho
-      std::cout << "\t\t - Solución actual: " << solution_points_.to_string() << "\n";
-      std::cout << "\t\t - Valor de la solución actual: " << solution_points_.get_value() << "\n";
-      // if (solution_points_.get_value() > actual_value) {
-      //   actual_value = solution_points_.get_value();
-      //   actual_solution = solution_points_;
-      //   std::cout << "\t\t - Mejora encontrada\n";
-      // } else {
-      //   // Si no se ha mejorado, volvemos a la solución anterior
+      if (solution_points_.get_value() > actual_value) {
+        actual_value = solution_points_.get_value();
+        actual_solution = solution_points_;
+      } else {
+        // Si no se ha mejorado, volvemos a la solución anterior
         solution_points_.set_point(temp, i);
         points_.pop_back();
         points_.push_back(points_[j]);
-      //   std::cout << "\t\t - No se ha mejorado\n";
-      // }
+      }
     }
   }
   solution_points_ = actual_solution;

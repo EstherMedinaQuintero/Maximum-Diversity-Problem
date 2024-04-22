@@ -314,3 +314,13 @@ Problema,n,K,m,z,S,CPU
 ./inputs/small.txt,6,2,2,20.000000,5 3,0.000773
 Problema,n,K,m,z,S,CPU
 ./inputs/small.txt,6,2,2,15.000000,5 3,0.001599
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,2,20.518285,5 4,0.000267
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,2,20.518285,5 4,0.000844
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.003217
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.004571
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000009

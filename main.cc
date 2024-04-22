@@ -4,19 +4,19 @@
 #include "greedy.h"
 #include "local-search.h"
 
-void printSolution(std::string algorithm, std::string input_file, int m);
+void print_solution(std::string algorithm, std::string input_file, int m);
 
 void execute(std::string algorithm, std::string input_file) {
   srand(time(NULL));
   std::cout << "Processing input file: " << input_file << std::endl;
   /// Probamos con varios m
-  for (int m = 2; m <= 2; m++) {
+  for (int m = 3; m <= 3; m++) {
     std::cout << "Processing m = " << m << std::endl;
-    printSolution(algorithm, input_file, m);
+    print_solution(algorithm, input_file, m);
   }
 }
 
-void printSolution(std::string algorithm, std::string input_file, int m) {
+void print_solution(std::string algorithm, std::string input_file, int m) {
   std::ofstream output_file;
   std::string line;
   output_file.open("./results.csv", std::ios::app); 
@@ -70,7 +70,7 @@ void printSolution(std::string algorithm, std::string input_file, int m) {
 
 int main() {
   std::string algorithm = "local-search";
-  std::string input_file = "./inputs/small.txt";
+  std::string input_file = "./inputs/max_div_15_2.txt";
   execute(algorithm, input_file);
   return 0;
 }
