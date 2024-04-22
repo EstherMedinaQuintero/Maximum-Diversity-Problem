@@ -264,3 +264,53 @@ Problema,n,K,m,z,S,CPU
 ./inputs/max_div_15_3.txt,18,3,3,18.000000,11 0 8,0.001045
 Problema,n,K,m,z,S,CPU
 ./inputs/max_div_15_3.txt,18,3,3,18.000000,11 0 8,0.000388
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_3.txt,18,3,3,18.000000,11 0 8,0.000383
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_3.txt,18,3,3,18.000000,11 0 8,0.008798
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_3.txt,18,3,3,18.000000,11 0 8,0.000812
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_3.txt,18,3,3,18.000000,11 0 8,0.011974
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_3.txt,18,3,3,18.000000,11 0 8,0.010381
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_3.txt,18,3,3,18.000000,11 0 8,0.001191
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_3.txt,18,3,3,10.000000,1 2 4,0.003155
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_3.txt,18,3,3,18.000000,11 0 8,0.001204
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_3.txt,18,3,4,36.000000,11 0 8 13,0.004298
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_3.txt,18,3,2,9.000000,11 0,0.003410
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_3.txt,18,3,1,0.000000,11,0.000499
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_3.txt,18,3,2,9.000000,11 0,0.000873
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_3.txt,18,3,3,18.000000,11 0 8,0.003075
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,3,18.000000,3 0 2,0.003027
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,3,16.000000,5 4 1,0.001587
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,3,18.000000,3 0 2,0.001347
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,3,18.000000,3 0 2,0.001106
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,3,18.000000,3 0 2,0.000831
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,3,18.000000,3 0 2,0.000912
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,3,18.000000,3 0 2,0.004795
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,2,9.000000,3 0,0.000755
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,2,9.000000,3 0,0.000632
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,2,9.000000,3 0,0.000714
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,2,20.000000,5 3,0.000773
+Problema,n,K,m,z,S,CPU
+./inputs/small.txt,6,2,2,15.000000,5 3,0.001599

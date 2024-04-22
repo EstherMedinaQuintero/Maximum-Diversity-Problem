@@ -9,7 +9,7 @@ class Greedy: public Algorithm {
   Greedy(std::vector<Point> points, int number_of_points): Algorithm(points, number_of_points) {}
 
   /// Sobrecarga del método virtual
-  void Solve() override;
+  void solve() override;
 };
 
 #endif

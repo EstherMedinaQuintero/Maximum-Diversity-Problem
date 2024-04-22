@@ -5,15 +5,15 @@
  * @param[in] name Nombre del fichero con el problema
  */
 Problem::Problem(std::string name) {
-  std::ifstream file(name);
+  std::ifstream file_input(name);
   std::string line;
-  std::getline(file, line);
+  std::getline(file_input, line);
   int number_of_points = std::stoi(line);
   number_of_points_ = number_of_points;
-  std::getline(file, line);
+  std::getline(file_input, line);
   int dimension = std::stoi(line);
   int id = 0;
-  while (std::getline(file, line)) {
+  while (std::getline(file_input, line)) {
     std::vector<double> coordinates(dimension);
     std::stringstream ss(line);
     for (int i = 0; i < dimension; i++) {

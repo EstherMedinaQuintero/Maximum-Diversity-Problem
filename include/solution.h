@@ -15,15 +15,15 @@ class Solution {
   Solution() {}
   
   /// Getters
-  std::vector<Point> GetPoints() { return solution_points_; }
+  inline std::vector<Point> get_points() { return solution_points_; }
+  inline Point get_point(int pos) { return solution_points_[pos]; }
+  double get_value();
+
+  /// Setters
+  inline void set_point(Point point, int pos) { solution_points_[pos] = point;}
 
   /// Métodos
-  double Value();
-  std::string ToString();
-
-  /// Sobrecarga de los [] para acceder a los puntos
-  Point& operator[](int i) { return solution_points_[i]; }
-  
+  std::string to_string();
 };
 
 #endif

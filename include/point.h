@@ -17,14 +17,14 @@ class Point {
   Point() = default;
   
   /// Getters
-  int GetDimension() const { return dimension_; }
-  std::vector<double> GetCoordinates() const { return coordinates_; }
-  int GetId() const { return id_; }
+  inline int get_dimension() const { return dimension_; }
+  inline std::vector<double> get_coordinates() const { return coordinates_; }
+  inline int get_id() const { return id_; }
 
   /// Métodos
-  double Distance(const Point& other) const;
-  double Distance(const std::vector<Point>& centroids) const;
-  std::string ToString() const;
+  double distance_to(const Point& other) const;
+  double distance_to(const std::vector<Point>& centroids) const;
+  std::string to_string() const;
 
   /// Sobrecarga de operadores
   bool operator==(const Point& other) const;

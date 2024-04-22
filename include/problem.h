@@ -19,7 +19,7 @@ class Problem {
   Problem() = default;
 
   /// Getters
-  std::vector<Point>& GetPoints() { return points_; }
+  std::vector<Point>& get_points() { return points_; }
 };
 
 #endif

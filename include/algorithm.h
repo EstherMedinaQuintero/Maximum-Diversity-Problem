@@ -18,11 +18,11 @@ class Algorithm {
   Algorithm(std::vector<Point> points, int number_of_points);
 
   /// Getters
-  Solution GetSolution() { return solution_points_; }
-  Point GetGravityCenterPoint(std::vector<Point> points);
+  inline Solution get_solution() { return solution_points_; }
+  Point get_gravity_center(std::vector<Point> points);
 
   /// Métodos virtuales
-  virtual void Solve() = 0;
+  virtual void solve() = 0;
 };
 
 #endif 

@@ -19,7 +19,7 @@ Point::Point(std::vector<double> coordinates, int id) {
  * @param[in] other El otro punto
  * @return Distancia entre los dos puntos
  */
-double Point::Distance(const Point& other) const {
+double Point::distance_to(const Point& other) const {
   double sum = 0;
   for (int i = 0; i < dimension_; i++) {
     sum += pow(coordinates_[i] - other.coordinates_[i], 2);
@@ -32,10 +32,10 @@ double Point::Distance(const Point& other) const {
  * @param[in] centroids Vector de puntos
  * @return Distancia entre un punto y un vector de puntos
  */
-double Point::Distance(const std::vector<Point>& centroids) const {
-  double min_distance = Distance(centroids[0]);
-  for (int i = 1; i < (int)centroids.size(); i++) {
-    double distance = Distance(centroids[i]);
+double Point::distance_to(const std::vector<Point>& centroids) const {
+  double min_distance = distance_to(centroids[0]);
+  for (int point = 1; point < (int)centroids.size(); point++) {
+    double distance = distance_to(centroids[point]);
     if (distance < min_distance) {
       min_distance = distance;
     }
@@ -47,10 +47,10 @@ double Point::Distance(const std::vector<Point>& centroids) const {
  * @brief Conversión a string del punto
  * @return Una string de los atributos del punto
  */
-std::string Point::ToString() const {
+std::string Point::to_string() const {
   std::string result;
-  for (int i = 0; i < (int)coordinates_.size(); i++) {
-    result += std::to_string(coordinates_[i]) + " ";
+  for (int point = 0; point < (int)coordinates_.size(); point++) {
+    result += std::to_string(coordinates_[point]) + " ";
   }
   result.pop_back();
   return result;

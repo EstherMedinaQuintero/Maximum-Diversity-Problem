@@ -15,12 +15,12 @@ Algorithm::Algorithm(std::vector<Point> points, int number_of_points) {
  * @param[in] points Vector de puntos
  * @return Centro de gravedad
  */
-Point Algorithm::GetGravityCenterPoint(std::vector<Point> points) {
-  int dimension = points[0].GetDimension();
+Point Algorithm::get_gravity_center(std::vector<Point> points) {
+  int dimension = points[0].get_dimension();
   std::vector<double> gravity_center_point_coordinates(dimension, 0.0);
   for (auto point : points) {
     for (int i = 0; i < dimension; i++) {
-      gravity_center_point_coordinates[i] += point.GetCoordinates()[i];
+      gravity_center_point_coordinates[i] += point.get_coordinates()[i];
     }
   }
   for (int i = 0; i < dimension; i++) {
