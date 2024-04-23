@@ -1,3 +1,14 @@
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Diseño y análisis de algoritmos
+ *
+ * @author Esther M. Quintero
+ * @date 20 Apr 2024
+ * @brief Cabecera de la clase Solution
+ */
+
 #ifndef SOLUTION_H
 #define SOLUTION_H
 
@@ -26,4 +37,4 @@ class Solution {
   std::string to_string();
 };
 
-#endif
+#endif // SOLUTION_H

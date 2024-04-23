@@ -1,3 +1,14 @@
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Diseño y análisis de algoritmos
+ *
+ * @author Esther M. Quintero
+ * @date 20 Apr 2024
+ * @brief Programa principal
+ */
+
 #include <iostream>
 #include <chrono>
 #include <fstream>
@@ -7,16 +18,27 @@
 
 void print_solution(std::string algorithm, std::string input_file, int m);
 
+/**
+ * @brief Ejecuta el algoritmo seleccionado
+ * @param[in] algorithm Algoritmo a ejecutar
+ * @param[in] input_file Fichero de entrada
+ */
 void execute(std::string algorithm, std::string input_file) {
   srand(time(NULL));
   std::cout << PINK "Processing input file: " NC << input_file << std::endl;
   /// Probamos con varios m
-  for (int m = 3; m <= 6; m++) {
+  for (int m = 2; m <= 6; m++) {
     std::cout << BLUE "\n\t--> Processing " NC << "m = " << m << std::endl;
     print_solution(algorithm, input_file, m);
   }
 }
 
+/**
+ * @brief Imprime la solución en consola y en un archivo CSV
+ * @param[in] algorithm Algoritmo a ejecutar
+ * @param[in] input_file Fichero de entrada
+ * @param[in] m Número de puntos a seleccionar
+ */
 void print_solution(std::string algorithm, std::string input_file, int m) {
   std::ofstream output_file;
   std::string line;
@@ -26,37 +48,37 @@ void print_solution(std::string algorithm, std::string input_file, int m) {
   std::vector<Point> points = problem.get_points();
   
   if (algorithm == "greedy") {
-    Greedy greedyMDP(points, m); 
+    Greedy greedy(points, m); 
     auto start = std::chrono::high_resolution_clock::now();
-    greedyMDP.solve();
+    greedy.solve();
     auto end = std::chrono::high_resolution_clock::now();
     auto elapsed_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(end - start);
 
     /// Resultados en archivo CSV
     line += input_file + "," + std::to_string(points.size()) + "," + std::to_string(points[0].get_dimension())
-    + "," + std::to_string(m) + "," + std::to_string(greedyMDP.get_solution().get_value()) + "," + greedyMDP.get_solution().to_string()
+    + "," + std::to_string(m) + "," + std::to_string(greedy.get_solution().get_value()) + "," + greedy.get_solution().to_string()
     + "," + std::to_string(elapsed_seconds.count());
     
     /// Resulados en consola
-    std::cout << BLUE "\t\t- Value: " NC << greedyMDP.get_solution().get_value() << std::endl;
-    std::cout << BLUE "\t\t- Vector: " NC << greedyMDP.get_solution().to_string() << std::endl;
+    std::cout << BLUE "\t\t- Value: " NC << greedy.get_solution().get_value() << std::endl;
+    std::cout << BLUE "\t\t- Vector: " NC << greedy.get_solution().to_string() << std::endl;
     std::cout << BLUE "\t\t- Time: " NC << elapsed_seconds.count() << " seconds" << std::endl;
 
   } else if (algorithm == "local-search") {
-    LocalSearch localSearch(points, m);
+    LocalSearch local_search(points, m);
     auto start = std::chrono::high_resolution_clock::now();
-    localSearch.solve();
+    local_search.solve();
     auto end = std::chrono::high_resolution_clock::now();
     auto elapsed_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(end - start);
 
     /// Resultados en archivo CSV
     line += input_file + "," + std::to_string(points.size()) + "," + std::to_string(points[0].get_dimension())
-    + "," + std::to_string(m) + "," + std::to_string(localSearch.get_solution().get_value()) + "," + localSearch.get_solution().to_string()
+    + "," + std::to_string(m) + "," + std::to_string(local_search.get_solution().get_value()) + "," + local_search.get_solution().to_string()
     + "," + std::to_string(elapsed_seconds.count());
     
     /// Resulados en consola
-    std::cout << BLUE "\t\t- Value: " NC << localSearch.get_solution().get_value() << std::endl;
-    std::cout << BLUE "\t\t- Vector: " NC << localSearch.get_solution().to_string() << std::endl;
+    std::cout << BLUE "\t\t- Value: " NC << local_search.get_solution().get_value() << std::endl;
+    std::cout << BLUE "\t\t- Vector: " NC << local_search.get_solution().to_string() << std::endl;
     std::cout << BLUE "\t\t- Time: " NC << elapsed_seconds.count() << " seconds" << std::endl;
     
   } else if (algorithm == "grasp") {
@@ -70,8 +92,13 @@ void print_solution(std::string algorithm, std::string input_file, int m) {
 }
 
 int main() {
-  std::string algorithm = "local-search";
-  std::string input_file = "./inputs/max_div_15_2.txt";
+  std::cout << PINK "\n------------------------- Greedy -------------------------\n" NC << std::endl;
+  std::string algorithm = "greedy";
+  std::string input_file = "./inputs/max_div_30_3.txt";
+  execute(algorithm, input_file);
+  std::cout << PINK "\n---------------------- Local Search ----------------------\n" NC << std::endl;
+  algorithm = "local-search";
+  input_file = "./inputs/max_div_30_3.txt";
   execute(algorithm, input_file);
   return 0;
 }

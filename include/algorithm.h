@@ -1,3 +1,14 @@
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Diseño y análisis de algoritmos
+ *
+ * @author Esther M. Quintero
+ * @date 20 Apr 2024
+ * @brief Cabecera de la clase Algorithm
+ */
+
 #ifndef ALGORITHM_H
 #define ALGORITHM_H
 
@@ -25,4 +36,4 @@ class Algorithm {
   virtual void solve() = 0;
 };
 
-#endif 
+#endif // ALGORITHM_H

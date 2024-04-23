@@ -1,3 +1,14 @@
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Diseño y análisis de algoritmos
+ *
+ * @author Esther M. Quintero
+ * @date 20 Apr 2024
+ * @brief Cabecera de la clase Greedy
+ */
+
 #ifndef GREEDY_H
 #define GREEDY_H
 
@@ -12,4 +23,4 @@ class Greedy: public Algorithm {
   void solve() override;
 };
 
-#endif
+#endif // GREEDY_H

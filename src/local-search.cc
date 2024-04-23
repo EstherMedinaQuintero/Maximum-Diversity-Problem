@@ -1,3 +1,14 @@
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Diseño y análisis de algoritmos
+ *
+ * @author Esther M. Quintero
+ * @date 20 Apr 2024
+ * @brief Implementación de la clase LocalSearch
+ */
+
 #include "local-search.h"
 
 /**
@@ -32,6 +43,7 @@ void LocalSearch::solve() {
   // Mejora con local search (intercambios)
   // Buscamos maximizar la suma de las distancias
   double actual_value = solution_points_.get_value();
+  double old_value = actual_value; // Para comprobar si se ha mejorado
   Solution actual_solution = solution_points_;
 
   // Recorremos los puntos de la solución
@@ -56,4 +68,5 @@ void LocalSearch::solve() {
     }
   }
   solution_points_ = actual_solution;
+  std::cout << YELLOW "\t\t- Porcentaje de mejora: " NC << (actual_value - old_value) / old_value * 100 << "%" << std::endl;
 }
