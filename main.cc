@@ -138,7 +138,7 @@ int main() {
   execute(algorithm, input_file);
   std::cout << PINK "\n----------------------- Tabu Search ----------------------\n" NC << std::endl;
   algorithm = "tabu-search";
-  input_file = "./inputs/max_div_15_2.txt";
+  input_file = "./inputs/max_div_20_2.txt";
   execute(algorithm, input_file);
   return 0;
 }
