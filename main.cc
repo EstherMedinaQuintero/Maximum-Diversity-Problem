@@ -15,6 +15,7 @@
 #include "greedy.h"
 #include "grasp.h"
 #include "local-search.h"
+#include "tabu-search.h"
 #include "utilities.h"
 
 void print_solution(std::string algorithm, std::string input_file, int m);
@@ -98,6 +99,22 @@ void print_solution(std::string algorithm, std::string input_file, int m) {
     std::cout << BLUE "\t\t- Value: " NC << grasp.get_solution().get_value() << std::endl;
     std::cout << BLUE "\t\t- Vector: " NC << grasp.get_solution().to_string() << std::endl;
     std::cout << BLUE "\t\t- Time: " NC << elapsed_seconds.count() << " seconds" << std::endl;
+  } else if (algorithm == "tabu-search") {
+    TabuSearch tabu_search(points, m);
+    auto start = std::chrono::high_resolution_clock::now();
+    tabu_search.solve();
+    auto end = std::chrono::high_resolution_clock::now();
+    auto elapsed_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(end - start);
+
+    /// Resultados en archivo CSV
+    line += input_file + "," + std::to_string(points.size()) + "," + std::to_string(points[0].get_dimension())
+    + "," + std::to_string(m) + "," + std::to_string(tabu_search.get_solution().get_value()) + "," + tabu_search.get_solution().to_string()
+    + "," + std::to_string(elapsed_seconds.count());
+
+    /// Resulados en consola
+    std::cout << BLUE "\t\t- Value: " NC << tabu_search.get_solution().get_value() << std::endl;
+    std::cout << BLUE "\t\t- Vector: " NC << tabu_search.get_solution().to_string() << std::endl;
+    std::cout << BLUE "\t\t- Time: " NC << elapsed_seconds.count() << " seconds" << std::endl;
   } else if (algorithm == "poda") {
     std::cout << "Branch no está implementado aún" << std::endl;
   }
@@ -115,8 +132,12 @@ int main() {
   algorithm = "local-search";
   input_file = "./inputs/max_div_15_2.txt";
   execute(algorithm, input_file);
-  std::cout << PINK "\n------------------------- Grasp -------------------------\n" NC << std::endl;
+  std::cout << PINK "\n------------------------- Grasp --------------------------\n" NC << std::endl;
   algorithm = "grasp";
+  input_file = "./inputs/max_div_15_2.txt";
+  execute(algorithm, input_file);
+  std::cout << PINK "\n----------------------- Tabu Search ----------------------\n" NC << std::endl;
+  algorithm = "tabu-search";
   input_file = "./inputs/max_div_15_2.txt";
   execute(algorithm, input_file);
   return 0;

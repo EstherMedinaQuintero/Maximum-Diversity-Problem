@@ -35,6 +35,11 @@ class Solution {
 
   /// Métodos
   std::string to_string();
+
+  /// Sobrecarga del ==
+  bool operator==(const Solution& solution) const {
+    return solution_points_ == solution.solution_points_;
+  }
 };
 
 #endif // SOLUTION_H

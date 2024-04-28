@@ -668,3 +668,143 @@ Problema,n,K,m,z,S,CPU
 ./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000068
 Problema,n,K,m,z,S,CPU
 ./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000082
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000004
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,25.726200,8 6 3,0.000005
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.413931,8 6 3 10,0.000006
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,73.561899,8 6 3 10 1,0.000006
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,109.254875,8 6 3 10 1 14,0.000008
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000169
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000167
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.842241,8 6 3 13,0.000195
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000172
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000188
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000190
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000191
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.842241,8 6 3 13,0.000239
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000297
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000222
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000003
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,25.726200,8 6 3,0.000005
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.413931,8 6 3 10,0.000006
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,73.561899,8 6 3 10 1,0.000007
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,109.254875,8 6 3 10 1 14,0.000008
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000025
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000029
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.842241,8 6 3 13,0.000032
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000149
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000042
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000035
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000050
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.842241,8 6 3 13,0.000061
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000146
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000084
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000003
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,25.726200,8 6 3,0.000004
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.413931,8 6 3 10,0.000004
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,73.561899,8 6 3 10 1,0.000007
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,109.254875,8 6 3 10 1 14,0.000008
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000020
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000029
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.842241,8 6 3 13,0.000058
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000068
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000061
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000055
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000081
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.842241,8 6 3 13,0.000042
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000058
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000059
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,0.000000,8,0.000009
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,0.000000,1,0.000013
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,9.731362,4 5,0.000014
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,7.174678,11 5,0.000028
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,19.624591,11 8 7,0.000027
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000003
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,25.726200,8 6 3,0.000004
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.413931,8 6 3 10,0.000005
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,73.561899,8 6 3 10 1,0.000006
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,109.254875,8 6 3 10 1 14,0.000008
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000025
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000028
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.842241,8 6 3 13,0.000034
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000033
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000037
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000044
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000055
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.842241,8 6 3 13,0.000064
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000073
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000086
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.632661,6 3,0.000020
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,11.987422,9 12 14,0.000031
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,44.772484,8 13 9 4,0.000078
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,27.808980,3 11 1 4 8,0.000639
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,94.411200,10 9 11 0 4 14,0.000704

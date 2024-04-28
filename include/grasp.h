@@ -26,9 +26,6 @@ class Grasp: public Algorithm {
   Grasp(std::vector<Point> points, int number_of_points, int lrc_size, int iterations) : Algorithm(points, number_of_points), lrc_size_(lrc_size), iterations_(iterations) {}
   void solve();
   Solution constructive();
-  std::vector<std::pair<Solution, double>> local_search(Solution& solution, const std::vector<Point>& points);
 };
-
-#include "algorithm.h"
 
 #endif

@@ -1,5 +1,19 @@
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Diseño y análisis de algoritmos
+ *
+ * @author Esther M. Quintero
+ * @date 20 Apr 2024
+ * @brief Implementación de la clase Grasp
+ */
+
 #include "grasp.h"
 
+/**
+ * @brief Fase constructiva del algoritmo grasp
+ */
 Solution Grasp::constructive() {
   // First, we calculate the gravity center point of the points and add the farthest point to the solution
   Point gravity_center_point = get_gravity_center(points_);
@@ -43,22 +57,9 @@ Solution Grasp::constructive() {
   return Solution(solution_points);
 }
 
-std::vector<std::pair<Solution, double>> Grasp::local_search(Solution& solution, const std::vector<Point>& points) {
-  std::vector<std::pair<Solution, double>> neighborhood;
-  double current_value = solution.get_value();
-  for (int i = 0; i < (int)solution.get_points().size(); ++i) {
-    for (int j = 0; j < (int)points.size(); ++j) {
-      if (!std::any_of(solution.get_points().begin(), solution.get_points().end(), [&](const Point& p) { return p.get_id() == points[j].get_id(); })) {
-        std::vector<Point> new_solution_points = solution.get_points();
-        new_solution_points[i] = points[j];
-        double new_value = current_value - solution.get_points()[i].distance_to(points[i]) + points[i].distance_to(points[j]);
-        neighborhood.push_back({Solution(new_solution_points), new_value});
-      }
-    }
-  }
-  return neighborhood;
-}
-
+/**
+ * @brief Resuelve el problema grasp
+ */
 void Grasp::solve() {
   Solution current_solution = constructive();
   int iterations = 0;

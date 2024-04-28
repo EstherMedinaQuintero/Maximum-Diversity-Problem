@@ -18,6 +18,7 @@ SRCS = ./src/algorithm.cc \
        ./src/point.cc \
        ./src/problem.cc \
        ./src/solution.cc \
+       ./src/tabu-search.cc \
        ./src/utilities.cc \
        ./main.cc
 

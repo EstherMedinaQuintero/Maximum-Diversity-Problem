@@ -12,7 +12,7 @@
 #include "local-search.h"
 
 /**
- * @brief Resuelve el problema greedy
+ * @brief Resuelve el problema de búsqueda local
  */
 void LocalSearch::solve() {
   std::vector<Point> solution_points;
@@ -72,7 +72,7 @@ void LocalSearch::solve() {
 }
 
 /**
- * @brief Resuelve el problema greedy
+ * @brief Resuelve el problema de búsqueda local
  */
 void LocalSearch::silent_solve() {
   std::vector<Point> solution_points;
