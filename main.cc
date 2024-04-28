@@ -13,6 +13,7 @@
 #include <chrono>
 #include <fstream>
 #include "greedy.h"
+#include "grasp.h"
 #include "local-search.h"
 #include "utilities.h"
 
@@ -82,7 +83,21 @@ void print_solution(std::string algorithm, std::string input_file, int m) {
     std::cout << BLUE "\t\t- Time: " NC << elapsed_seconds.count() << " seconds" << std::endl;
     
   } else if (algorithm == "grasp") {
-    std::cout << "GRASP no está implementado aún" << std::endl;
+    Grasp grasp(points, m, 3, 100);
+    auto start = std::chrono::high_resolution_clock::now();
+    grasp.solve();
+    auto end = std::chrono::high_resolution_clock::now();
+    auto elapsed_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(end - start);
+
+    /// Resultados en archivo CSV
+    line += input_file + "," + std::to_string(points.size()) + "," + std::to_string(points[0].get_dimension())
+    + "," + std::to_string(m) + "," + std::to_string(grasp.get_solution().get_value()) + "," + grasp.get_solution().to_string()
+    + "," + std::to_string(elapsed_seconds.count());
+
+    /// Resulados en consola
+    std::cout << BLUE "\t\t- Value: " NC << grasp.get_solution().get_value() << std::endl;
+    std::cout << BLUE "\t\t- Vector: " NC << grasp.get_solution().to_string() << std::endl;
+    std::cout << BLUE "\t\t- Time: " NC << elapsed_seconds.count() << " seconds" << std::endl;
   } else if (algorithm == "poda") {
     std::cout << "Branch no está implementado aún" << std::endl;
   }
@@ -94,11 +109,15 @@ void print_solution(std::string algorithm, std::string input_file, int m) {
 int main() {
   std::cout << PINK "\n------------------------- Greedy -------------------------\n" NC << std::endl;
   std::string algorithm = "greedy";
-  std::string input_file = "./inputs/max_div_30_3.txt";
+  std::string input_file = "./inputs/max_div_15_2.txt";
   execute(algorithm, input_file);
   std::cout << PINK "\n---------------------- Local Search ----------------------\n" NC << std::endl;
   algorithm = "local-search";
-  input_file = "./inputs/max_div_30_3.txt";
+  input_file = "./inputs/max_div_15_2.txt";
+  execute(algorithm, input_file);
+  std::cout << PINK "\n------------------------- Grasp -------------------------\n" NC << std::endl;
+  algorithm = "grasp";
+  input_file = "./inputs/max_div_15_2.txt";
   execute(algorithm, input_file);
   return 0;
 }

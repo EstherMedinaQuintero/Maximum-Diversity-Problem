@@ -22,6 +22,7 @@ class LocalSearch: public Algorithm {
 
   /// Sobrecarga del método virtual
   void solve() override;
+  void silent_solve();
 };
 
 #endif // LOCAL_SEARCH_H
