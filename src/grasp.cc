@@ -28,7 +28,6 @@ Solution Grasp::constructive() {
     }
   }
   solution_points.push_back(points_[max_distance_point_index]);
-
   max_distance = -9999999999;
   max_distance_point_index = -1;
   for (int i = 1; i < number_of_points_; ++i) {

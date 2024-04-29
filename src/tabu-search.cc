@@ -48,7 +48,6 @@ void TabuSearch::solve() {
   std::cout << YELLOW "\t\t- Porcentaje de mejora: " NC << (actual_value - old_value) / old_value * 100 << "%" << std::endl;
 }
 
-
 /**
  * @brief Actualiza la lista tabú
  * @param tabu_list Lista tabú
