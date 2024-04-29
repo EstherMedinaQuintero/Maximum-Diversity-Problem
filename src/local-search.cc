@@ -39,31 +39,54 @@ void LocalSearch::solve() {
     points_.erase(max_iter); // Elimina el punto más alejado de la lista de puntos
   }
 
+  // solution_points_ = Solution(solution_points);
+  // // Mejora con local search (intercambios)
+  // // Buscamos maximizar la suma de las distancias
+  // double actual_value = solution_points_.get_value();
+  // double old_value = actual_value; // Para comprobar si se ha mejorado
+  // Solution actual_solution = solution_points_;
+
+  // // Recorremos los puntos de la solución
+  // for (int i = 0; i < number_of_points_; i++) {
+  //   // Recorremos los puntos generales
+  //   for (int j = 0; j < (int)points_.size(); j++) {
+  //     // Hacemos swap
+  //     Point temp = solution_points_.get_point(i);
+  //     solution_points_.set_point(points_[j], i);
+  //     points_.erase(points_.begin() + j);
+  //     points_.push_back(temp);
+  //     // Comprobamos que el swap se ha hecho
+  //     if (solution_points_.get_value() > actual_value) {
+  //       actual_value = solution_points_.get_value();
+  //       actual_solution = solution_points_;
+  //     } else {
+  //       // Si no se ha mejorado, volvemos a la solución anterior
+  //       solution_points_.set_point(temp, i);
+  //       points_.pop_back();
+  //       points_.push_back(points_[j]);
+  //     }
+  //   }
+  // }
+
+  // ------------------------- Cálculo de movimientos -----------------------------
   solution_points_ = Solution(solution_points);
-  // Mejora con local search (intercambios)
-  // Buscamos maximizar la suma de las distancias
   double actual_value = solution_points_.get_value();
-  double old_value = actual_value; // Para comprobar si se ha mejorado
+  double old_value = actual_value;
   Solution actual_solution = solution_points_;
 
   // Recorremos los puntos de la solución
   for (int i = 0; i < number_of_points_; i++) {
     // Recorremos los puntos generales
     for (int j = 0; j < (int)points_.size(); j++) {
-      // Hacemos swap
-      Point temp = solution_points_.get_point(i);
-      solution_points_.set_point(points_[j], i);
-      points_.erase(points_.begin() + j);
-      points_.push_back(temp);
-      // Comprobamos que el swap se ha hecho
-      if (solution_points_.get_value() > actual_value) {
-        actual_value = solution_points_.get_value();
+      // Calculamos el nuevo valor potencial con el punto j
+      double new_value = solution_points_.get_new_value(i, points_[j]);
+      // Si el nuevo valor es mejor, realizamos el swap
+      if (new_value > actual_value) {
+        Point temp = solution_points_.get_point(i);
+        solution_points_.set_point(points_[j], i);
+        points_[j] = temp;
+        actual_value = new_value; // actualizamos el valor actual de la solución
         actual_solution = solution_points_;
-      } else {
-        // Si no se ha mejorado, volvemos a la solución anterior
-        solution_points_.set_point(temp, i);
-        points_.pop_back();
-        points_.push_back(points_[j]);
       }
     }
   }

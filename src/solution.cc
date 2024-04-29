@@ -26,6 +26,28 @@ double Solution::get_value() {
 }
 
 /**
+ * @brief Calcula la función objetivo
+ * @return Suma de todas las distancias
+ */
+double Solution::get_new_value(int old_point, Point new_point) {
+  // Evaluamos el movimiento de retirar old_point y añadir new_point
+  double value = get_value();
+  // Restamos las distancias de old_point
+  for (int i = 0; i < (int)solution_points_.size(); i++) {
+    if (i != old_point) {
+      value -= solution_points_[i].distance_to(solution_points_[old_point]);
+    }
+  }
+  // Añadimos las distancias de new_point
+  for (int i = 0; i < (int)solution_points_.size(); i++) {
+    if (i != old_point) {
+      value += new_point.distance_to(solution_points_[i]);
+    }
+  }
+  return value;
+}
+
+/**
  * @brief Conversión a string de la solución
  * @return Una string de los atributos de la solución
  */

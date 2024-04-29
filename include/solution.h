@@ -29,6 +29,7 @@ class Solution {
   inline std::vector<Point> get_points() { return solution_points_; }
   inline Point get_point(int pos) { return solution_points_[pos]; }
   double get_value();
+  double get_new_value(int old_point, Point new_point);
 
   /// Setters
   inline void set_point(Point point, int pos) { solution_points_[pos] = point;}
