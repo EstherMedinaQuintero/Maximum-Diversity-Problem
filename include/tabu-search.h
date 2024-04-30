@@ -14,6 +14,7 @@
 
 #include "algorithm.h"
 #include "utilities.h"
+#include "grasp.h"
 #include <list>
 
 class TabuSearch: public Algorithm {

@@ -1078,3 +1078,243 @@ Problema,n,K,m,z,S,CPU
 ./inputs/max_div_20_2.txt,21,2,5,50.113248,17 15 2 4 8,0.010677
 Problema,n,K,m,z,S,CPU
 ./inputs/max_div_20_2.txt,21,2,6,66.313149,0 18 19 2 3 12,0.004804
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000005
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,25.726200,8 6 3,0.000006
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.413931,8 6 3 10,0.000007
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,73.561899,8 6 3 10 1,0.000009
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,109.254875,8 6 3 10 1 14,0.000008
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000053
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000052
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,49.546157,8 6 3 5,0.000055
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,79.129530,0 6 8 5 3,0.000058
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,113.410594,0 6 8 9 3 14,0.000054
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000055
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000083
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.842241,8 6 3 13,0.000090
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000123
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000111
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,2,11.972239,20 8,0.000321
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,3,27.224217,12 20 1,0.000295
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,4,49.791795,8 20 1 18,0.000387
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,5,76.124090,17 20 18 12 1,0.006899
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,6,107.746537,1 12 17 8 20 18,0.009908
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000003
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,25.726200,8 6 3,0.000005
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.413931,8 6 3 10,0.000006
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,73.561899,8 6 3 10 1,0.000005
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,109.254875,8 6 3 10 1 14,0.000008
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000020
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000026
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,49.546157,8 6 3 5,0.000027
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,79.129530,0 6 8 5 3,0.000032
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,113.410594,0 6 8 9 3 14,0.000037
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000044
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000055
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.842241,8 6 3 13,0.000063
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000072
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000081
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,2,11.972239,20 8,0.000137
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,3,27.224217,12 20 1,0.000168
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,4,49.791795,18 20 8 1,0.000330
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,5,76.124090,18 1 12 20 17,0.006111
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,6,107.746537,1 12 17 8 20 18,0.007187
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000003
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,25.726200,8 6 3,0.000005
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.413931,8 6 3 10,0.000006
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,73.561899,8 6 3 10 1,0.000007
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,109.254875,8 6 3 10 1 14,0.000007
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000047
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000204
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,49.546157,8 6 3 5,0.000060
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,79.129530,0 6 8 5 3,0.000026
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,113.410594,0 6 8 9 3 14,0.000038
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000027
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000042
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.842241,8 6 3 13,0.000061
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000075
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000088
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,2,11.972239,20 8,0.000152
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,3,27.224217,12 1 20,0.000181
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,4,49.791795,18 1 20 8,0.000470
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,5,76.124090,20 18 17 1 12,0.004188
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,6,107.746537,1 12 17 8 20 18,0.005476
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000005
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,25.726200,8 6 3,0.000005
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.413931,8 6 3 10,0.000006
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,73.561899,8 6 3 10 1,0.000007
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,109.254875,8 6 3 10 1 14,0.000008
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000022
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000023
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,49.546157,8 6 3 5,0.000027
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,79.129530,0 6 8 5 3,0.000032
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,113.410594,0 6 8 9 3 14,0.000036
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000046
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000056
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.842241,8 6 3 13,0.000067
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000072
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000109
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,2,11.972239,20 8,0.000189
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,3,27.224217,12 20 1,0.000249
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,4,49.791795,20 8 1 18,0.000335
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,5,76.124090,18 12 20 1 17,0.004929
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,6,107.746537,1 12 17 8 20 18,0.006164
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000003
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,25.726200,8 6 3,0.000005
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.413931,8 6 3 10,0.000006
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,73.561899,8 6 3 10 1,0.000007
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,109.254875,8 6 3 10 1 14,0.000008
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000021
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000025
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,49.546157,8 6 3 5,0.000028
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,79.129530,0 6 8 5 3,0.000035
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,113.410594,0 6 8 9 3 14,0.000035
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,2,11.859216,8 6,0.000046
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,3,26.178381,9 6 3,0.000155
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,4,48.842241,8 6 3 13,0.000059
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,5,78.934632,0 6 3 5 1,0.000072
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_15_2.txt,15,2,6,112.261438,0 6 8 9 8 14,0.000081
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,2,11.972239,20 8,0.000188
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,3,27.224217,12 1 20,0.000244
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,4,49.791795,8 18 1 20,0.000284
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,5,76.124090,20 18 17 12 1,0.003584
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_20_2.txt,21,2,6,107.746537,1 12 17 8 20 18,0.005821
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,2,13.308163,8 30,0.000007
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,3,26.616326,8 30 31,0.000008
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,4,51.530596,8 30 31 22,0.005690
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,5,85.751835,8 30 31 22 1,0.000011
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,6,126.268699,8 30 31 22 1 10,0.000012
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,2,13.308163,8 30,0.000025
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,3,31.052108,8 1 31,0.000032
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,4,54.148432,8 30 31 1,0.000040
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,5,88.202905,8 30 31 10 1,0.000052
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,6,126.724122,8 30 31 9 1 10,0.000062
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,2,13.308163,8 31,0.000061
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,3,31.052108,8 31 1,0.000057
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,4,54.128158,8 27 30 1,0.000071
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,5,86.341936,8 30 31 4 1,0.000146
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,6,126.724122,8 30 31 9 1 10,0.000160
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,2,13.308163,8 31,0.000190
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,3,31.052108,8 1 31,0.000255
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,4,54.962618,8 30 14 10,0.002305
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,5,86.341936,30 1 31 8 4,0.009274
+Problema,n,K,m,z,S,CPU
+./inputs/max_div_30_2.txt,32,2,6,126.724122,10 8 1 30 31 9,0.004786

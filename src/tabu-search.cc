@@ -18,14 +18,15 @@
 
 /**
  * @brief Resuelve el problema de búsqueda tabú
+ * @note Añadir multiarranque (y nos quedamos con la mejor)
  */
 void TabuSearch::solve() {
   int max_iterations = 1000;
   int num_iterations_no_improve = 0;
-  int tabu_tenure = 10; // Tamaño de la lista tabú
+  int tabu_tenure = 5; // Tamaño de la lista tabú
   std::list<Solution> tabu_list;
-  // Inicialización de la solución
-  solution_points_ = generate_initial_solution();
+  // Inicialización de la solución (añadir multiarranque)
+  solution_points_ = generate_initial_solution(); // Greedy --> Cambiar a GRASP (hecho)
   Solution best_solution = solution_points_;
   double old_value = solution_points_.get_value();
   // Búsqueda de la mejor solución
@@ -97,12 +98,17 @@ bool TabuSearch::is_in_tabu(const Solution& solution, const std::list<Solution>&
 }
 
 /**
- * @brief Genera una solución inicial aleatoria
+ * @brief Genera una solución inicial
+ * @note Cambiar a GRASP
  * @return Solución inicial
  */
 Solution TabuSearch::generate_initial_solution() {
-  std::vector<Point> shuffled_points = points_;
-  std::random_shuffle(shuffled_points.begin(), shuffled_points.end());
-  shuffled_points.resize(number_of_points_);
-  return Solution(shuffled_points);
+  /// Generar con grasp
+  Grasp grasp(points_, number_of_points_, 3, 100);
+  grasp.solve();
+  return grasp.get_solution();
+  // std::vector<Point> shuffled_points = points_;
+  // std::random_shuffle(shuffled_points.begin(), shuffled_points.end());
+  // shuffled_points.resize(number_of_points_);
+  // return Solution(shuffled_points);
 }
