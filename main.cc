@@ -117,7 +117,7 @@ void print_solution(std::string algorithm, std::string input_file, int m) {
     std::cout << BLUE "\t\t- Vector: " NC << tabu_search.get_solution().to_string() << std::endl;
     std::cout << BLUE "\t\t- Time: " NC << elapsed_seconds.count() << " seconds" << std::endl;
   } else if (algorithm == "poda") {
-    RamificacionPodaMDP ramificacion_poda(points, m, "deep", "greedy");
+    Ramificacion ramificacion_poda(points, m, "deep", "greedy");
     auto start = std::chrono::high_resolution_clock::now();
     ramificacion_poda.solve();
     auto end = std::chrono::high_resolution_clock::now();

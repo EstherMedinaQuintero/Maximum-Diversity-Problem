@@ -2,6 +2,44 @@
 
 #include <algorithm>
 
+/**
+ * @brief Constructor de la clase Ramificacion
+ * @param points puntos del problema
+ * @param number_of_iterations número de iteraciones
+ * @param number_of_points número de puntos a seleccionar
+ */
+Ramificacion::Ramificacion(std::vector<Point> points, int number_of_points, std::string search_strategy, std::string initial_solution_strategy):
+  Algorithm(points, number_of_points), search_strategy_(search_strategy) {
+  for (auto point : points_) {
+    for (auto point2 : points_) {
+      if (point.distance_to(point2) > highest_distance_) {
+        highest_distance_ = point.distance_to(point2);
+      }
+    }
+  }
+
+  if (initial_solution_strategy == "greedy") {
+    Greedy greedy(points_, number_of_points_);
+    greedy.solve();
+    initial_solution_ = greedy.get_solution();
+  } else if (initial_solution_strategy == "grasp") {
+    Grasp grasp(points_, number_of_points_, 3, 20);
+    initial_solution_ = grasp.constructive();
+  }
+}
+
+/**
+ * @brief Resuelve el problema de ramificación y poda
+ */
+void Ramificacion::solve() {
+  if (search_strategy_ == "deep") {
+    deep_solve();
+  } else {
+    high_value_solve();
+  }
+}
+
+// Estructura de un nodo
 struct Node {
   Solution solution;
   double upper_bound;
@@ -10,6 +48,10 @@ struct Node {
   }
 };
 
+/**
+ * @brief Imprime la solución de un nodo
+ * @param node Nodo a imprimir
+ */
 void PrintNodeSolution(Node node) {
   std::cout << "Solution: ";
   for (auto point : node.solution.get_points()) {
@@ -18,25 +60,30 @@ void PrintNodeSolution(Node node) {
   std::cout << "Upper bound: " << node.upper_bound << std::endl;
 }
 
-double RamificacionPodaMDP::GetNodeSolutionValue(Solution node_solution) {
+/**
+ * @brief Devuelve el valor de una solución
+ * @param node_solution Solución a evaluar
+ * @return Valor de la solución
+ */
+double Ramificacion::get_node_solution_value(Solution node_solution) {
   int number_of_points = node_solution.get_points().size();
   std::vector<Point> solution_points = node_solution.get_points();
   int point_dimension = solution_points[0].get_dimension();
   // introduce puntos con id -1 en la solucion hasta que tenga el mismo numero de nodos que el problema
   while (number_of_points < number_of_points_) {
-      std::vector<double> coordinates;
-      for (int i = 0; i < point_dimension; i++) {
-      coordinates.push_back(-1);
-      }
-      Point point(coordinates, -1);
-      solution_points.push_back(point);
-      number_of_points++;
+    std::vector<double> coordinates;
+    for (int i = 0; i < point_dimension; i++) {
+    coordinates.push_back(-1);
+    }
+    Point point(coordinates, -1);
+    solution_points.push_back(point);
+    number_of_points++;
   }
   
   double value = 0;
   // The value is the sum of the distances between all the points of the solution
-  for (int i = 0; i < solution_points.size(); i++) {
-    for (int j = i + 1; j < solution_points.size(); j++) {
+  for (int i = 0; i < (int)solution_points.size(); i++) {
+    for (int j = i + 1; j < (int)solution_points.size(); j++) {
       if (solution_points[i].get_id() != -1 && solution_points[j].get_id() != -1) {
         value += solution_points[i].distance_to(solution_points[j]);
       } else {
@@ -47,22 +94,22 @@ double RamificacionPodaMDP::GetNodeSolutionValue(Solution node_solution) {
   return value;
 }
 
-
-
-
-void RamificacionPodaMDP::HighValueSolver() {
+/**
+ * @brief Resuelve el problema usando la estrategia de ramificación con cota superior
+ */
+void Ramificacion::high_value_solve() {
   std::vector<Node> nodes;
   int number_of_points = initial_solution_.get_points().size();
-  double best_solution_value_ = GetNodeSolutionValue(initial_solution_);
+  double best_solution_value_ = get_node_solution_value(initial_solution_);
   Solution best_solution_ = initial_solution_;
 
-  for (int i = 0; i < points_.size(); i++) {
+  for (int i = 0; i < (int)points_.size(); i++) {
     std::vector<Point> points;
     points.push_back(points_[i]);
     Solution solution(points);
     Node node;
     node.solution = solution;
-    node.upper_bound = GetNodeSolutionValue(solution);
+    node.upper_bound = get_node_solution_value(solution);
     nodes.push_back(node);
     ++nodes_generated_;
   }
@@ -77,26 +124,26 @@ void RamificacionPodaMDP::HighValueSolver() {
     std::vector<Point> node_points = node.solution.get_points();
     int node_id = node_points.back().get_id();
 
-    if (node_points.size() < number_of_points) {
-      for (int i = node_id + 1; i < points_.size(); i++) {
+    if ((int)node_points.size() < number_of_points) {
+      for (int i = node_id + 1; i < (int)points_.size(); i++) {
         std::vector<Point> new_node_points = node_points;
         new_node_points.push_back(points_[i]);
         Solution new_node_solution(new_node_points);
         Node new_node;
         new_node.solution = new_node_solution;
-        new_node.upper_bound = GetNodeSolutionValue(new_node_solution);
+        new_node.upper_bound = get_node_solution_value(new_node_solution);
         nodes.push_back(new_node);
         ++nodes_generated_;
       }
     } else {
-      if (GetNodeSolutionValue(node.solution) > best_solution_value_) {
-        best_solution_value_ = GetNodeSolutionValue(node.solution);
+      if (get_node_solution_value(node.solution) > best_solution_value_) {
+        best_solution_value_ = get_node_solution_value(node.solution);
         best_solution_ = node.solution;
       }
     }
 
-    for (int nodo = 0; nodo < nodes.size(); nodo++) {
-      if (nodes[nodo].solution.get_points().size() == number_of_points) {
+    for (int nodo = 0; nodo < (int)nodes.size(); nodo++) {
+      if ((int)nodes[nodo].solution.get_points().size() == number_of_points) {
         if (nodes[nodo].upper_bound < best_solution_value_) {
           nodes.erase(nodes.begin() + nodo);
           --nodo;
@@ -108,19 +155,22 @@ void RamificacionPodaMDP::HighValueSolver() {
   solution_points_ = best_solution_;
 }
 
-void RamificacionPodaMDP::DeepSolver() {
+/**
+ * @brief Resuelve el problema usando la estrategia de ramificación en profundidad
+ */
+void Ramificacion::deep_solve() {
   std::vector<Node> nodes;
   int number_of_points = initial_solution_.get_points().size();
-  double best_solution_value_ = GetNodeSolutionValue(initial_solution_);
+  double best_solution_value_ = get_node_solution_value(initial_solution_);
   Solution best_solution_ = initial_solution_;
 
-  for (int i = 0; i < points_.size(); i++) {
+  for (int i = 0; i < (int)points_.size(); i++) {
     std::vector<Point> points;
     points.push_back(points_[i]);
     Solution solution(points);
     Node node;
     node.solution = solution;
-    node.upper_bound = GetNodeSolutionValue(solution);
+    node.upper_bound = get_node_solution_value(solution);
     nodes.push_back(node);
     ++nodes_generated_;
   }
@@ -133,26 +183,26 @@ void RamificacionPodaMDP::DeepSolver() {
     std::vector<Point> node_points = node.solution.get_points();
     int node_id = node_points.back().get_id();
 
-    if (node_points.size() < number_of_points) {
-      for (int i = node_id + 1; i < points_.size(); i++) {
+    if ((int)node_points.size() < number_of_points) {
+      for (int i = node_id + 1; i < (int)points_.size(); i++) {
         std::vector<Point> new_node_points = node_points;
         new_node_points.push_back(points_[i]);
         Solution new_node_solution(new_node_points);
         Node new_node;
         new_node.solution = new_node_solution;
-        new_node.upper_bound = GetNodeSolutionValue(new_node_solution);
+        new_node.upper_bound = get_node_solution_value(new_node_solution);
         nodes.push_back(new_node);
         ++nodes_generated_;
       }
     } else {
-      if (GetNodeSolutionValue(node.solution) > best_solution_value_) {
-        best_solution_value_ = GetNodeSolutionValue(node.solution);
+      if (get_node_solution_value(node.solution) > best_solution_value_) {
+        best_solution_value_ = get_node_solution_value(node.solution);
         best_solution_ = node.solution;
       }
     }
 
-    for (int nodo = 0; nodo < nodes.size(); nodo++) {
-      if (nodes[nodo].solution.get_points().size() == number_of_points) {
+    for (int nodo = 0; nodo < (int)nodes.size(); nodo++) {
+      if ((int)nodes[nodo].solution.get_points().size() == number_of_points) {
         if (nodes[nodo].upper_bound < best_solution_value_) {
           nodes.erase(nodes.begin() + nodo);
           --nodo;
