@@ -12,6 +12,7 @@ DEBUG_CXXFLAGS = -g -DDEBUG
 
 # List of source files
 SRCS = ./src/algorithm.cc \
+       ./src/branch.cc \
        ./src/grasp.cc \
        ./src/greedy.cc \
        ./src/local-search.cc \

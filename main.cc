@@ -14,6 +14,7 @@
 #include <fstream>
 #include "greedy.h"
 #include "grasp.h"
+#include "branch.h"
 #include "local-search.h"
 #include "tabu-search.h"
 #include "utilities.h"
@@ -116,7 +117,21 @@ void print_solution(std::string algorithm, std::string input_file, int m) {
     std::cout << BLUE "\t\t- Vector: " NC << tabu_search.get_solution().to_string() << std::endl;
     std::cout << BLUE "\t\t- Time: " NC << elapsed_seconds.count() << " seconds" << std::endl;
   } else if (algorithm == "poda") {
-    std::cout << "Branch no está implementado aún" << std::endl;
+    RamificacionPodaMDP ramificacion_poda(points, m, "deep", "greedy");
+    auto start = std::chrono::high_resolution_clock::now();
+    ramificacion_poda.solve();
+    auto end = std::chrono::high_resolution_clock::now();
+    auto elapsed_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(end - start);
+
+    /// Resultados en archivo CSV
+    line += input_file + "," + std::to_string(points.size()) + "," + std::to_string(points[0].get_dimension())
+    + "," + std::to_string(m) + "," + std::to_string(ramificacion_poda.get_solution().get_value()) + "," + ramificacion_poda.get_solution().to_string()
+    + "," + std::to_string(elapsed_seconds.count());
+
+    /// Resulados en consola
+    std::cout << BLUE "\t\t- Value: " NC << ramificacion_poda.get_solution().get_value() << std::endl;
+    std::cout << BLUE "\t\t- Vector: " NC << ramificacion_poda.get_solution().to_string() << std::endl;
+    std::cout << BLUE "\t\t- Time: " NC << elapsed_seconds.count() << " seconds" << std::endl;
   }
   output_file << labels << std::endl;
   output_file << line << std::endl;
@@ -138,6 +153,10 @@ int main() {
   execute(algorithm, input_file);
   std::cout << PINK "\n----------------------- Tabu Search ----------------------\n" NC << std::endl;
   algorithm = "tabu-search";
+  input_file = "./inputs/max_div_30_2.txt";
+  execute(algorithm, input_file);
+  std::cout << PINK "\n---------------------- Ramificación ---------------------\n" NC << std::endl;
+  algorithm = "poda";
   input_file = "./inputs/max_div_30_2.txt";
   execute(algorithm, input_file);
   return 0;
