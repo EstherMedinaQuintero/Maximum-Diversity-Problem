@@ -4,7 +4,7 @@
 #include "grasp.h"
 #include "greedy.h"
 
-class Ramificacion: public Algorithm {
+class BranchSearch: public Algorithm {
  private:
   double get_node_solution_value(Solution node_solution);
   double highest_distance_ = 0;
@@ -14,7 +14,7 @@ class Ramificacion: public Algorithm {
 
  public:
   /// Constructor
-  Ramificacion(std::vector<Point> points, int number_of_points, std::string search_strategy, std::string initial_solution_strategy);
+  BranchSearch(std::vector<Point> points, int number_of_points, std::string search_strategy, std::string initial_solution_strategy);
 
   /// Métodos
   void deep_solve();

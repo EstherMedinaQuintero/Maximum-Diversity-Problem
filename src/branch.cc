@@ -1,5 +1,4 @@
 #include "branch.h"
-
 #include <algorithm>
 
 /**
@@ -8,8 +7,9 @@
  * @param number_of_iterations número de iteraciones
  * @param number_of_points número de puntos a seleccionar
  */
-Ramificacion::Ramificacion(std::vector<Point> points, int number_of_points, std::string search_strategy, std::string initial_solution_strategy):
+BranchSearch::BranchSearch(std::vector<Point> points, int number_of_points, std::string search_strategy, std::string initial_solution_strategy):
   Algorithm(points, number_of_points), search_strategy_(search_strategy) {
+  // Cálculo de la distancia máxima entre puntos
   for (auto point : points_) {
     for (auto point2 : points_) {
       if (point.distance_to(point2) > highest_distance_) {
@@ -17,21 +17,22 @@ Ramificacion::Ramificacion(std::vector<Point> points, int number_of_points, std:
       }
     }
   }
-
+  // Inicialización de la solución según la estrategia elegida
   if (initial_solution_strategy == "greedy") {
     Greedy greedy(points_, number_of_points_);
     greedy.solve();
     initial_solution_ = greedy.get_solution();
   } else if (initial_solution_strategy == "grasp") {
     Grasp grasp(points_, number_of_points_, 3, 20);
-    initial_solution_ = grasp.constructive();
+    grasp.solve();
+    initial_solution_ = grasp.get_solution();
   }
 }
 
 /**
  * @brief Resuelve el problema de ramificación y poda
  */
-void Ramificacion::solve() {
+void BranchSearch::solve() {
   if (search_strategy_ == "deep") {
     deep_solve();
   } else {
@@ -65,7 +66,8 @@ void PrintNodeSolution(Node node) {
  * @param node_solution Solución a evaluar
  * @return Valor de la solución
  */
-double Ramificacion::get_node_solution_value(Solution node_solution) {
+double BranchSearch::get_node_solution_value(Solution node_solution) {
+  // Calcula el valor de la solución sumando distancias
   int number_of_points = node_solution.get_points().size();
   std::vector<Point> solution_points = node_solution.get_points();
   int point_dimension = solution_points[0].get_dimension();
@@ -96,8 +98,10 @@ double Ramificacion::get_node_solution_value(Solution node_solution) {
 
 /**
  * @brief Resuelve el problema usando la estrategia de ramificación con cota superior
+ * @details Las cotas superiores se calculan sumando las distancias entre los puntos seleccionados, 
+ *          potencialmente incluyendo el peor caso (distancia máxima) para puntos no seleccionados aún. 
  */
-void Ramificacion::high_value_solve() {
+void BranchSearch::high_value_solve() {
   std::vector<Node> nodes;
   int number_of_points = initial_solution_.get_points().size();
   double best_solution_value_ = get_node_solution_value(initial_solution_);
@@ -141,7 +145,7 @@ void Ramificacion::high_value_solve() {
         best_solution_ = node.solution;
       }
     }
-
+    // Podar nodos cuya cota superior no mejora la mejor solución actual
     for (int nodo = 0; nodo < (int)nodes.size(); nodo++) {
       if ((int)nodes[nodo].solution.get_points().size() == number_of_points) {
         if (nodes[nodo].upper_bound < best_solution_value_) {
@@ -158,7 +162,7 @@ void Ramificacion::high_value_solve() {
 /**
  * @brief Resuelve el problema usando la estrategia de ramificación en profundidad
  */
-void Ramificacion::deep_solve() {
+void BranchSearch::deep_solve() {
   std::vector<Node> nodes;
   int number_of_points = initial_solution_.get_points().size();
   double best_solution_value_ = get_node_solution_value(initial_solution_);

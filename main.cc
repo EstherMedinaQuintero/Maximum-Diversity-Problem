@@ -30,7 +30,7 @@ void execute(std::string algorithm, std::string input_file) {
   srand(time(NULL));
   std::cout << PINK "Processing input file: " NC << input_file << std::endl;
   /// Probamos con varios m
-  for (int m = 2; m <= 6; m++) {
+  for (int m = 2; m <= 5; m++) {
     std::cout << BLUE "\n\t--> Processing " NC << "m = " << m << std::endl;
     print_solution(algorithm, input_file, m);
   }
@@ -117,7 +117,7 @@ void print_solution(std::string algorithm, std::string input_file, int m) {
     std::cout << BLUE "\t\t- Vector: " NC << tabu_search.get_solution().to_string() << std::endl;
     std::cout << BLUE "\t\t- Time: " NC << elapsed_seconds.count() << " seconds" << std::endl;
   } else if (algorithm == "poda") {
-    Ramificacion ramificacion_poda(points, m, "deep", "greedy");
+    BranchSearch ramificacion_poda(points, m, "deep", "grasp");
     auto start = std::chrono::high_resolution_clock::now();
     ramificacion_poda.solve();
     auto end = std::chrono::high_resolution_clock::now();
@@ -126,7 +126,7 @@ void print_solution(std::string algorithm, std::string input_file, int m) {
     /// Resultados en archivo CSV
     line += input_file + "," + std::to_string(points.size()) + "," + std::to_string(points[0].get_dimension())
     + "," + std::to_string(m) + "," + std::to_string(ramificacion_poda.get_solution().get_value()) + "," + ramificacion_poda.get_solution().to_string()
-    + "," + std::to_string(elapsed_seconds.count());
+    + "," + std::to_string(elapsed_seconds.count()) + "," + std::to_string(ramificacion_poda.get_generated_nodes());
 
     /// Resulados en consola
     std::cout << BLUE "\t\t- Value: " NC << ramificacion_poda.get_solution().get_value() << std::endl;
@@ -141,23 +141,103 @@ void print_solution(std::string algorithm, std::string input_file, int m) {
 int main() {
   std::cout << PINK "\n------------------------- Greedy -------------------------\n" NC << std::endl;
   std::string algorithm = "greedy";
-  std::string input_file = "./inputs/max_div_30_2.txt";
-  execute(algorithm, input_file);
-  std::cout << PINK "\n---------------------- Local Search ----------------------\n" NC << std::endl;
-  algorithm = "local-search";
-  input_file = "./inputs/max_div_30_2.txt";
-  execute(algorithm, input_file);
-  std::cout << PINK "\n------------------------- Grasp --------------------------\n" NC << std::endl;
-  algorithm = "grasp";
-  input_file = "./inputs/max_div_30_2.txt";
-  execute(algorithm, input_file);
-  std::cout << PINK "\n----------------------- Tabu Search ----------------------\n" NC << std::endl;
-  algorithm = "tabu-search";
-  input_file = "./inputs/max_div_30_2.txt";
-  execute(algorithm, input_file);
-  std::cout << PINK "\n---------------------- Ramificación ---------------------\n" NC << std::endl;
+  std::string input_file = "./inputs/max_div_15_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_15_3.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_20_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_20_3.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_30_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_30_3.txt";
+  // execute(algorithm, input_file);
+
+  // std::cout << PINK "\n---------------------- Local Search ----------------------\n" NC << std::endl;
+  // algorithm = "local-search";
+  // input_file = "./inputs/max_div_15_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_15_3.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_20_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_20_3.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_30_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_30_3.txt";
+  // execute(algorithm, input_file);
+
+
+  // std::cout << PINK "\n------------------------- Grasp --------------------------\n" NC << std::endl;
+  // algorithm = "grasp";
+  // input_file = "./inputs/max_div_15_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_15_3.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_20_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_20_3.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_30_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_30_3.txt";
+  // execute(algorithm, input_file);
+
+  // std::cout << PINK "\n----------------------- Tabu Search ----------------------\n" NC << std::endl;
+  // algorithm = "tabu-search";
+  // input_file = "./inputs/max_div_15_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_15_3.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_20_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_20_3.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_30_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_30_3.txt";
+  // execute(algorithm, input_file);
+
+  // std::cout << PINK "\n---------------------- Ramificación ---------------------\n" NC << std::endl;
   algorithm = "poda";
-  input_file = "./inputs/max_div_30_2.txt";
-  execute(algorithm, input_file);
+  // input_file = "./inputs/max_div_15_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_15_3.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_20_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_20_3.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_30_2.txt";
+  // execute(algorithm, input_file);
+
+  // input_file = "./inputs/max_div_30_3.txt";
+  // execute(algorithm, input_file);
   return 0;
 }
