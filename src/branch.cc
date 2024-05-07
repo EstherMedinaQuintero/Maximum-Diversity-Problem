@@ -99,7 +99,7 @@ double BranchSearch::get_node_solution_value(Solution node_solution) {
 /**
  * @brief Resuelve el problema usando la estrategia de ramificación con cota superior
  * @details Las cotas superiores se calculan sumando las distancias entre los puntos seleccionados, 
- *          potencialmente incluyendo el peor caso (distancia máxima) para puntos no seleccionados aún. 
+ *          incluyendo el peor caso (distancia máxima) para puntos no seleccionados aún. 
  */
 void BranchSearch::high_value_solve() {
   std::vector<Node> nodes;
